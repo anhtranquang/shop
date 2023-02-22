@@ -4,11 +4,11 @@ Build the project by running the following command in the root directory of your
 This will build the project and generate a jar file in the target directory.
 
 Build the Docker image by running the following command in the same directory as the Dockerfile:
-    docker build -t myapp .
+    docker build -t shop .
 
-This will build a Docker image with the tag "myapp" using the Dockerfile in the current directory.
+This will build a Docker image with the tag "shop" using the Dockerfile in the current directory.
 Tag the Docker image with the AWS repository URL. The repository URL should be in the format <aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com/<repository_name>.
-    docker tag myapp <aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com/<repository_name>:latest
+    docker tag shop <aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com/<repository_name>:latest
 
 Push the Docker image to the AWS repository.
     docker push <aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com/<repository_name>:latest
