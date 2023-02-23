@@ -1,17 +1,18 @@
 package com.digital.shop.service.impl;
 
-import com.digital.shop.entity.Shop;
+import com.digital.shop.entity.ShopEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
 public interface ShopServiceImpl {
-    List<Shop> getAllShops();
+    List<ShopEntity> getAllShops();
 
-    List<Shop> getShopsByLocation(String location);
+    ShopEntity getShopById(Long id);
 
-    Shop saveShop(Shop shop);
+    List<ShopEntity> getShopsByLocation(String location);
+
+    ShopEntity saveShop(ShopEntity shop);
 
     void deleteShop(Long id);
 }

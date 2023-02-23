@@ -1,26 +1,22 @@
-package com.digital.shop.entity;
+package com.digital.shop.controller.response;
 
-import jakarta.persistence.*;
+import com.digital.shop.entity.MenuEntity;
+
 import java.util.List;
 
-@Entity
-@Table(name = "shop")
-public class Shop {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ShopResponse {
     private Long id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "location")
     private String location;
 
-    @OneToMany(mappedBy = "shop", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Menu> menus;
+    private List<MenuResponse> menus;
 
-    public Shop(Long id, String name, String location, List<Menu> menus) {
+    public ShopResponse() {
+    }
+
+    public ShopResponse(Long id, String name, String location, List<MenuResponse> menus) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -51,11 +47,11 @@ public class Shop {
         this.location = location;
     }
 
-    public List<Menu> getMenus() {
+    public List<MenuResponse> getMenus() {
         return menus;
     }
 
-    public void setMenus(List<Menu> menus) {
+    public void setMenus(List<MenuResponse> menus) {
         this.menus = menus;
     }
 }

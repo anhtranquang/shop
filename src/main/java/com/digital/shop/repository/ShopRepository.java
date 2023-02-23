@@ -1,11 +1,11 @@
 package com.digital.shop.repository;
 
-import com.digital.shop.entity.Shop;
+import com.digital.shop.entity.ShopEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ShopRepository extends JpaRepository<Shop, Long> {
-    List<Shop> findAllByLocation(String location);
+public interface ShopRepository extends JpaRepository<ShopEntity, Long> {
+    List<ShopEntity> findAllByLocation(String location);
 }
